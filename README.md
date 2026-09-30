@@ -1,30 +1,123 @@
-# Auction
-Status: completed and submitted (Pass)
-  
-## Description
-* [Project specification](https://cs50.harvard.edu/web/2020/projects/2/commerce/#specification)
-* **[Django](https://www.djangoproject.com) is used as web framework** and SQLite as the database.
+# 🔨 Auction — Online Auction Platform
 
-## Setup 
-> Python and [Git](https://git-scm.com) must be installed on your computer.  
-> Creating a virtual environment is optional, but it is usually better to do so if you know how.
-Clone this repository
-```bash
+A full-stack online auction web application built with **Python, Django, SQLite, HTML, CSS, and JavaScript**.
 
-Install any required dependencies
-``` 
-Initialize the database
-```
-python manage.py makemigrations auctions
-python manage.py migrate
-```  
-Run the development server
-```
-python manage.py runserver
-```
+The application allows users to create auction listings, place bids, add listings to a watchlist, comment on listings, and manage their own auctions.
 
-## Demo
-#### [Go to demo web site](https://youtu.be/bnfcbeBKQlQ)
+This project was developed as part of **CS50's Web Programming with Python and JavaScript (CS50W)**.
 
-## Note on academic honesty
-If you're taking CS50W, either through [Harvard Extension School](https://extension.harvard.edu/), [Harvard Summer School](https://summer.harvard.edu/) or [OpenCourseWare](https://cs50.harvard.edu/web/), please do not blindly copy paste my code. You are putting yourself at a huge risk for getting excluded from the course by the staff themselves as they grade each project thoroughly. This is a course offered by Harvard, and you will be put up to their standard.
+---
+
+## 📸 Overview
+
+Auction provides an e-commerce-style platform where users can create and participate in online auctions.
+
+Users can:
+
+- Create auction listings
+- Browse active listings
+- Place bids
+- Add listings to a watchlist
+- Comment on listings
+- View listing details
+- Close auctions
+- View their own listings
+- Track their activity
+
+---
+## 🎥 Project Demo
+
+Watch the video demonstration to see how the Auction platform works.
+
+[![Auction Platform Demo](https://img.youtube.com/vi/bnfcbeBKQlQ/0.jpg)](https://www.youtube.com/watch?v=bnfcbeBKQlQ)
+
+▶️ [Watch the full demo on YouTube](https://www.youtube.com/watch?v=bnfcbeBKQlQ)
+## 🚀 Features
+
+### 👤 User Authentication
+
+- User registration
+- Login and logout
+- Session-based authentication
+- User-specific actions
+
+### 🔨 Auction Listings
+
+Users can create listings containing:
+
+- Title
+- Description
+- Starting bid
+- Image
+- Category
+
+Users can browse active auction listings and view detailed information about each item.
+
+### 💰 Bidding
+
+Users can place bids on active listings.
+
+The application validates bids before accepting them and ensures that a new bid meets the required conditions.
+
+### ⭐ Watchlist
+
+Users can add auction listings to their personal watchlist.
+
+This allows them to easily return to auctions they are interested in.
+
+### 💬 Comments
+
+Users can leave comments on auction listings and view comments from other users.
+
+### 🏆 Auction Closing
+
+The owner of an auction can close the listing.
+
+Once an auction is closed, the highest valid bidder becomes the winner.
+
+### 📂 Categories
+
+Listings can be organized into categories, making it easier for users to discover items.
+
+---
+
+## 🛠️ Technologies
+
+| Technology | Purpose |
+|---|---|
+| Python | Backend programming |
+| Django | Web framework |
+| SQLite | Database |
+| HTML5 | Page structure |
+| CSS3 | Styling |
+| JavaScript | Client-side functionality |
+| Bootstrap | UI components |
+| Django Templates | Dynamic HTML rendering |
+
+---
+
+## 🏗️ Application Architecture
+
+```text
+                    ┌─────────────────┐
+                    │      User       │
+                    └────────┬────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │   Django Web    │
+                    │   Application   │
+                    └────────┬────────┘
+                             │
+              ┌──────────────┼──────────────┐
+              │              │              │
+              ▼              ▼              ▼
+         Authentication   Auctions       Watchlist
+              │              │              │
+              └──────────────┼──────────────┘
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │     SQLite      │
+                    │     Database    │
+                    └─────────────────┘
